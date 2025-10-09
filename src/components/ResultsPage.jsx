@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Button } from './ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
@@ -19,6 +19,15 @@ const getStyleIcon = (styleKey) => {
 
 const ResultsPage = ({ result, onRestart, onDownload }) => {
   const style = communicationStyles[result.styleKey];
+  
+  // Scroll to top when results page loads
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }, []);
   
   const getStyleColor = (styleKey) => {
     const colorMap = {

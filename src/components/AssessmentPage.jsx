@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from './ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Progress } from './ui/progress';
@@ -10,6 +10,24 @@ const TOTAL_PAGES = Math.ceil(questions.length / QUESTIONS_PER_PAGE);
 
 const AssessmentPage = ({ answers, onAnswer, onComplete }) => {
   const [currentPage, setCurrentPage] = useState(0);
+  
+  // Scroll to top when component mounts or page changes
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }, [currentPage]);
+  
+  // Scroll to top when assessment first loads
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }, []);
   
   const getCurrentQuestions = () => {
     const startIndex = currentPage * QUESTIONS_PER_PAGE;
@@ -27,6 +45,12 @@ const AssessmentPage = ({ answers, onAnswer, onComplete }) => {
   const handleNext = () => {
     if (currentPage < TOTAL_PAGES - 1) {
       setCurrentPage(currentPage + 1);
+      // Scroll to top immediately
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
     } else {
       // Final page, complete assessment
       onComplete();
@@ -36,6 +60,12 @@ const AssessmentPage = ({ answers, onAnswer, onComplete }) => {
   const handlePrevious = () => {
     if (currentPage > 0) {
       setCurrentPage(currentPage - 1);
+      // Scroll to top immediately
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
     }
   };
   
