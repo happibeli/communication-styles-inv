@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/communication-styles-inv/static/css/main.72a1e5b4.css",
+    "main.js": "/communication-styles-inv/static/js/main.73c5e57c.js",
+    "index.html": "/communication-styles-inv/index.html",
+    "main.72a1e5b4.css.map": "/communication-styles-inv/static/css/main.72a1e5b4.css.map",
+    "main.73c5e57c.js.map": "/communication-styles-inv/static/js/main.73c5e57c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.72a1e5b4.css",
+    "static/js/main.73c5e57c.js"
+  ]
+}
