@@ -90,7 +90,7 @@ const WelcomePage = ({ onStart }) => {
                   </li>
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-[#00a999] rounded-full"></div>
-                    <span>Professional communication style analysis</span>
+                    <span>Survey taken from The Platinum Rule by Tony Alessandra, Ph.D, and Michael J. O'Connor Ph.D. New York, New York, Warner Books 1996</span>
                   </li>
                 </ul>
               </div>
