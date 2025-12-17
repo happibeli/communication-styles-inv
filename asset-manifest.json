@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/communication-styles-inv/static/css/main.72a1e5b4.css",
-    "main.js": "/communication-styles-inv/static/js/main.62d45fa4.js",
+    "main.js": "/communication-styles-inv/static/js/main.ad8b0339.js",
     "index.html": "/communication-styles-inv/index.html",
     "main.72a1e5b4.css.map": "/communication-styles-inv/static/css/main.72a1e5b4.css.map",
-    "main.62d45fa4.js.map": "/communication-styles-inv/static/js/main.62d45fa4.js.map"
+    "main.ad8b0339.js.map": "/communication-styles-inv/static/js/main.ad8b0339.js.map"
   },
   "entrypoints": [
     "static/css/main.72a1e5b4.css",
-    "static/js/main.62d45fa4.js"
+    "static/js/main.ad8b0339.js"
   ]
 }
