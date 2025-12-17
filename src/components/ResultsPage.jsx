@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Button } from './ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
-import { Download, RefreshCw, Target, Users, MessageSquare, Brain } from 'lucide-react';
+import { RefreshCw, Target, Users, MessageSquare, Brain } from 'lucide-react';
 import { communicationStyles } from '../data/questions';
 
 const getStyleIcon = (styleKey) => {
@@ -17,7 +17,7 @@ const getStyleIcon = (styleKey) => {
   return <IconComponent className="w-8 h-8" />;
 };
 
-const ResultsPage = ({ result, onRestart, onDownload }) => {
+const ResultsPage = ({ result, onRestart }) => {
   const style = communicationStyles[result.styleKey];
   
   // Scroll to top when results page loads
@@ -105,19 +105,10 @@ const ResultsPage = ({ result, onRestart, onDownload }) => {
               </div>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                onClick={onDownload}
-                className="bg-[#00a999] hover:bg-[#008a7a] text-white px-6 py-3 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-              >
-                <Download className="w-4 h-4 mr-2" />
-                Download Results
-              </Button>
-              
+            <div className="flex justify-center">
               <Button
                 onClick={onRestart}
-                variant="outline"
-                className="border-[#00a999] text-[#00a999] hover:bg-[#00a999] hover:text-white px-6 py-3 transition-all duration-300"
+                className="bg-[#00a999] hover:bg-[#008a7a] text-white px-6 py-3 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               >
                 <RefreshCw className="w-4 h-4 mr-2" />
                 Take Again

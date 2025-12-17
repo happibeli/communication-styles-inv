@@ -77,50 +77,6 @@ const App = () => {
     });
   };
 
-  const handleDownload = () => {
-    if (!result) return;
-    
-    const style = result.style;
-    const downloadContent = `COMMUNICATION STYLES INVENTORY RESULTS
-
-Your Communication Style: ${style.title}
-Subtype: ${style.subtitle}
-
-Your Scores:
-O (Outgoing): ${result.scores.O}
-G (Guarded): ${result.scores.G}
-D (Direct): ${result.scores.D}
-I (Indirect): ${result.scores.I}
-
-Dominant Traits: ${result.primary} and ${result.secondary}
-
-Characteristics:
-${style.traits.map(trait => `• ${trait}`).join('\n')}
-
-Generated on: ${new Date().toLocaleDateString()}
-Time: ${new Date().toLocaleTimeString()}
-
----
-Communication Styles Inventory
-Designed to help you understand your natural communication preferences.
-`;
-    
-    const blob = new Blob([downloadContent], { type: 'text/plain' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = `Communication-Style-Results-${style.title.replace('/', '-')}-${new Date().toISOString().split('T')[0]}.txt`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    URL.revokeObjectURL(url);
-    
-    toast({
-      title: "Results Downloaded!",
-      description: "Your communication style results have been saved to your device.",
-    });
-  };
-
   const handleRestart = () => {
     setCurrentStep('welcome');
     setAnswers({});
@@ -145,7 +101,6 @@ Designed to help you understand your natural communication preferences.
         <ResultsPage 
           result={result}
           onRestart={handleRestart}
-          onDownload={handleDownload}
         />
       )}
       
